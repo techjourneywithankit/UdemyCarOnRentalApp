@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Future_Start_Date</fullName>
+    <active>true</active>
+    <errorConditionFormula>(ischanged(Start_Date_Time__c) &amp;&amp; Start_Date_Time__c &lt;  NOW()) || (isnew() &amp;&amp; Start_Date_Time__c &lt;  NOW())</errorConditionFormula>
+    <errorDisplayField>Start_Date_Time__c</errorDisplayField>
+    <errorMessage>Start Date cannot be in the past</errorMessage>
+</ValidationRule>

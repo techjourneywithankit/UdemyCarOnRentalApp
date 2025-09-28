@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Share_Record_With_Fleet_team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share Record With Fleet team</label>
+        <sharedTo>
+            <group>Fleet_Management_Team</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Availability_Status__c</field>
+            <operation>equals</operation>
+            <value>Under Maintenance,Out of Service</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

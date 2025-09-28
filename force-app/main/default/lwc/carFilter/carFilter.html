@@ -1,0 +1,111 @@
+<template>
+  <lightning-card title="Filter Cars" icon-name="utility:filter">
+    <div class="slds-m-around_medium">
+      <lightning-input
+        type="search"
+        label="Search"
+        onchange={handleSearchChange}
+        class="slds-m-bottom_small"
+      ></lightning-input>
+      <template lwc:if={pickupLocationValues.data}>
+        <lightning-combobox
+          label="Pickup Location"
+          name="Pickup Location"
+          value={filters.pickupLocation}
+          options={pickupLocationValues.data.values}
+          onchange={handlePickupLocationChange}
+          required
+          class="slds-m-bottom_small"
+        ></lightning-combobox>
+      </template>
+      <div class="slds-grid slds-gutters slds-m-bottom_small">
+        <div class="slds-col slds-size_1-of-2">
+          <lightning-input
+            type="date"
+            label="Start Date"
+            onchange={handleStartDateChange}
+            required
+            class="startDateClass"
+          >
+          </lightning-input>
+        </div>
+
+        <div class="slds-col slds-size_1-of-2">
+          <lightning-input
+            type="date"
+            label="End Date"
+            onchange={handleEndDateChange}
+            required
+            class="endDateClass"
+          >
+          </lightning-input>
+        </div>
+      </div>
+      <lightning-slider
+        label="Max Seats"
+        min="1"
+        max="8"
+        value={filters.maxSeats}
+        step="1"
+        onchange={handleMaxSeatsChange}
+        class="slds-m-bottom_small"
+      ></lightning-slider>
+      <lightning-slider
+        label="Max Rental Rate"
+        min="1"
+        max="10000"
+        value={filters.maxRentalRate}
+        step="100"
+        onchange={handleMaxRentalRateChange}
+        class="slds-m-bottom_small"
+      ></lightning-slider>
+
+      <lightning-slider
+        label="Min Rating"
+        min="0"
+        max="5"
+        value={filters.minRating}
+        step="1"
+        onchange={handleMinRatingChange}
+        class="slds-m-bottom_small"
+      ></lightning-slider>
+
+      <template lwc:if={transmissionTypeValues.data}>
+        <div class="slds-m-bottom_small">
+          <p class="slds-text-heading_small">Transmission Type</p>
+          <template
+            for:each={transmissionTypeValues.data.values}
+            for:item="transmissionType"
+          >
+            <lightning-input
+              key={transmissionType.value}
+              type="checkbox"
+              label={transmissionType.label}
+              data-value={transmissionType.value}
+              onchange={handleCheckboxChange}
+              name="transmissionType"
+              class="slds-m-bottom_small"
+            ></lightning-input>
+          </template>
+        </div>
+      </template>
+
+      <template lwc:if={fuelTypeValues.data}>
+        <div class="slds-m-bottom_small">
+          <p class="slds-text-heading_small">Fuel Type</p>
+          <template for:each={fuelTypeValues.data.values} for:item="fuelType">
+            <lightning-input
+              key={fuelType.value}
+              type="checkbox"
+              label={fuelType.label}
+              data-value={fuelType.value}
+              onchange={handleCheckboxChange}
+              name="fuelType"
+              class="slds-m-bottom_small"
+            ></lightning-input>
+          </template>
+        </div>
+      </template>
+    </div>
+  </lightning-card>
+</template>

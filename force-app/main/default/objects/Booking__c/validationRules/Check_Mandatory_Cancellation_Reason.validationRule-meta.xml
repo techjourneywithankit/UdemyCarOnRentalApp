@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Mandatory_Cancellation_Reason</fullName>
+    <active>true</active>
+    <errorConditionFormula>ispickval(Status__c,&quot;Cancelled&quot;) &amp;&amp;  ISBLANK( Cancellation_Reason__c )</errorConditionFormula>
+    <errorDisplayField>Cancellation_Reason__c</errorDisplayField>
+    <errorMessage>Cancellation reason is required when booking is cancelled.</errorMessage>
+</ValidationRule>

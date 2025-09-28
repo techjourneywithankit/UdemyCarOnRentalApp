@@ -1,0 +1,61 @@
+<template>
+  <div class="car-tile slds-box slds-p-around_medium">
+    <div onclick={handleClick}>
+      <div class="image-container">
+        <img src={pictureUrl} alt={name} class="tile-image" />
+      </div>
+      <div class="slds-p-around_small">
+        <div
+          class="slds-text-heading_medium slds-m-bottom_small slds-text-align_center"
+        >
+          {name}
+        </div>
+        <div class="slds-m-bottom_small">
+          <lightning-icon
+            icon-name="utility:moneybag"
+            size="x-small"
+            class="slds-m-right_x-small"
+          ></lightning-icon>
+          ${rentalRate} per day
+        </div>
+        <div class="slds-m-bottom_small">
+          <c-star-rating value={averageRating} read-only></c-star-rating>
+        </div>
+        <div class="slds-m-bottom_small">
+          <lightning-badge
+            label={transmissionType}
+            icon-name="utility:settings"
+            variant="inverse"
+            class="slds-m-right_x-small"
+          >
+          </lightning-badge>
+        </div>
+
+        <div class="slds-m-bottom_small">
+          <lightning-badge
+            label={fuelType}
+            icon-name="utility:topic"
+            variant="inverse"
+            class="slds-m-right_x-small"
+          >
+          </lightning-badge>
+        </div>
+      </div>
+    </div>
+    <div class="slds-text-align_center">
+      <lightning-button
+        label="Estimate Booking"
+        variant="neutral"
+        onclick={handleEstimateBookingClick}
+        class="slds-m-right_x-small"
+      >
+      </lightning-button>
+      <lightning-button
+        label="Book Now"
+        variant="brand"
+        onclick={handleBookNowClick}
+      >
+      </lightning-button>
+    </div>
+  </div>
+</template>

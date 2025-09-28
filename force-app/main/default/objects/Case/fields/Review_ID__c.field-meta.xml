@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Review_ID__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Review</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Review__c.Booking__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.Related_Booking__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>Review__c.Customer__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.ContactId</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Review__c</referenceTo>
+    <relationshipLabel>Cases</relationshipLabel>
+    <relationshipName>Cases</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,47 @@
+<template>
+  <lightning-card title="Car Image Manager">
+    <div class="slds-var-p-around_small">
+      <template lwc:if={hasProductImages}>
+        <lightning-carousel>
+          <template for:each={carImages.data} for:item="image">
+            <lightning-carousel-image
+              key={image.Id}
+              src={image.Image_Url__c}
+              header={image.Car__r.Name}
+              href="javascript:void(0)"
+            >
+            </lightning-carousel-image>
+          </template>
+        </lightning-carousel>
+      </template>
+      <template lwc:else>
+        <c-placeholder message="No Car Images"></c-placeholder>
+      </template>
+    </div>
+
+    <template lwc:if={showUploadSection}>
+      <div class="slds-var-p-around_small">
+        <div class="slds-grid slds-grid_align-center slds-gutters">
+          <div class="slds-col slds-size_4-of-12">
+            <lightning-input
+              label="Primary Image"
+              type="checkbox"
+              checked={isPrimaryChecked}
+              onchange={handlePrimaryImage}
+              class="slds-var-m-top_large"
+            ></lightning-input>
+          </div>
+          <div class="slds-col slds-size_8-of-12">
+            <lightning-file-upload
+              label="Add Picture"
+              name="fileUploader"
+              accept=".png,.jpg"
+              record-id={recordId}
+              onuploadfinished={handleUploadFinished}
+            ></lightning-file-upload>
+          </div>
+        </div>
+      </div>
+    </template>
+  </lightning-card>
+</template>

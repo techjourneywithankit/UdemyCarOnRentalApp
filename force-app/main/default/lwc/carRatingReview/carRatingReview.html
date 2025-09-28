@@ -1,0 +1,70 @@
+<template>
+  <lightning-card title="Car Rating & Reviews">
+    <template lwc:if={hasData}>
+      <template lwc:if={reviews}>
+        <div class="slds-var-p-around_small">
+          <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_1-of-3">
+              <c-star-rating value={averageRating} read-only></c-star-rating>
+            </div>
+            <div class="slds-col slds-size_2-of-3">
+              Based on {totalReviews} reviews
+            </div>
+          </div>
+        </div>
+        <div class="slds-var-p-around_small">
+          <template for:each={ratingDistributionList} for:item="dist">
+            <div
+              key={dist.key}
+              class="slds-var-p-bottom_small slds-grid slds-grid_vertical-align-center"
+            >
+              <div class="slds-col slds-size_3-of-12">
+                <span>{dist.rating} stars</span>
+              </div>
+              <div class="slds-col slds-size_7-of-12">
+                <span>
+                  <lightning-progress-bar
+                    value={dist.percentage}
+                    size="medium"
+                  ></lightning-progress-bar>
+                </span>
+              </div>
+              <div class="slds-col slds-size_2-of-12 slds-text-align_center">
+                <span>{dist.percentage}%</span>
+              </div>
+            </div>
+          </template>
+        </div>
+        <div class="slds-var-p-around_small">
+          <template for:each={reviews} for:item="review">
+            <div key={review.Id} class="slds-box slds-m-bottom_small">
+              <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_1-of-1">
+                  <div
+                    class="slds-grid slds-grid_vertical-align-center slds-m-bottom_small"
+                  >
+                    <div class="slds-col slds-p-right_small">
+                      <c-star-rating
+                        value={review.Rating__c}
+                        read-only="true"
+                      ></c-star-rating>
+                    </div>
+                    <div class="slds-col slds-text-align_right">
+                      <span class="slds-text-body_small slds-text-color_weak"
+                        >{review.CreatedDateFormatted}</span
+                      >
+                    </div>
+                  </div>
+                  <p class="slds-text-body_regular">{review.Comments__c}</p>
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
+      </template>
+      <template lwc:else>
+        <c-placeholder message="No reviews found"></c-placeholder>
+      </template>
+    </template>
+  </lightning-card>
+</template>

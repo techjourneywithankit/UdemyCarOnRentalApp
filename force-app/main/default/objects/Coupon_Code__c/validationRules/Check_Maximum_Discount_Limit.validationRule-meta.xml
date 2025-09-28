@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Maximum_Discount_Limit</fullName>
+    <active>true</active>
+    <errorConditionFormula>Discount_Percentage__c &gt;  value($CustomMetadata.System_Thresholds__mdt.Max_Coupon_Code_Discount.Value__c)/100</errorConditionFormula>
+    <errorDisplayField>Discount_Percentage__c</errorDisplayField>
+    <errorMessage>Discount exceeds the allowed system limit</errorMessage>
+</ValidationRule>

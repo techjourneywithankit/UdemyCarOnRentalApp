@@ -1,0 +1,50 @@
+<template>
+  <lightning-modal-header label="Book Your Car"></lightning-modal-header>
+  <lightning-modal-body>
+    <lightning-record-edit-form
+      object-api-name={objectApiName}
+      onsubmit={handleSubmit}
+      onerror={handleError}
+      onsuccess={handleSuccess}
+    >
+      <lightning-messages></lightning-messages>
+      <div class="slds-grid slds-gutters">
+        <!-- First Row: Customer and Coupon Code -->
+        <div class="slds-col slds-size_1-of-2">
+          <!-- Contact Field -->
+          <lightning-input-field field-name={contactField} required>
+          </lightning-input-field>
+        </div>
+        <div class="slds-col slds-size_1-of-2">
+          <!-- Coupon Code Field -->
+          <lightning-input-field field-name={couponCodeField}>
+          </lightning-input-field>
+        </div>
+      </div>
+      <div class="slds-grid slds-gutters">
+        <!-- Second Row: Start Date and End Date -->
+        <div class="slds-col slds-size_1-of-2">
+          <!-- Start Date Field -->
+          <lightning-input-field field-name={startDateField} required>
+          </lightning-input-field>
+        </div>
+        <div class="slds-col slds-size_1-of-2">
+          <!-- End Date Field -->
+          <lightning-input-field field-name={endDateField} required>
+          </lightning-input-field>
+        </div>
+      </div>
+
+      <div class="slds-m-top_medium">
+        <lightning-button
+          label="Cancel"
+          onclick={handleCancel}
+          class="slds-m-right_x-small"
+        >
+        </lightning-button>
+        <lightning-button label="Create Booking" variant="brand" type="submit">
+        </lightning-button>
+      </div>
+    </lightning-record-edit-form>
+  </lightning-modal-body>
+</template>

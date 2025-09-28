@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Security_Deposit_Paid__c</fullName>
+    <inlineHelpText>Security Deposit transaction type</inlineHelpText>
+    <label>Total Security Deposit Paid</label>
+    <summarizedField>Payment_Transaction__c.Amount__c</summarizedField>
+    <summaryFilterItems>
+        <field>Payment_Transaction__c.Status__c</field>
+        <operation>equals</operation>
+        <value>Success</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Payment_Transaction__c.Type__c</field>
+        <operation>equals</operation>
+        <value>Security Deposit</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Payment_Transaction__c.Booking__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>CarFilter</masterLabel>
+    <isExposed>true</isExposed>
+    <description>Message Channel to pass a record Id</description>
+    <lightningMessageFields>
+        <fieldName>selCarFilter</fieldName>
+        <description>This is the Filter on car Hunt</description>
+    </lightningMessageFields>
+</LightningMessageChannel>

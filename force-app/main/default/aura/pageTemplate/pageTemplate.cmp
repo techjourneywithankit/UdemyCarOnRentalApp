@@ -1,0 +1,22 @@
+<aura:component
+  implements="lightning:appHomeTemplate"
+  description="Three column structure for desktop"
+>
+  <aura:attribute name="left" type="Aura.Component[]" />
+  <aura:attribute name="center" type="Aura.Component[]" />
+  <aura:attribute name="right" type="Aura.Component[]" />
+
+  <div>
+    <lightning:layout horizontalAlign="spread">
+      <lightning:layoutItem size="2" padding="around-small">
+        {!v.left}
+      </lightning:layoutItem>
+      <lightning:layoutItem size="7" padding="around-small">
+        {!v.center}
+      </lightning:layoutItem>
+      <lightning:layoutItem size="3" padding="around-small">
+        {!v.right}
+      </lightning:layoutItem>
+    </lightning:layout>
+  </div>
+</aura:component>

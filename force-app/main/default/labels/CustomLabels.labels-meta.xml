@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Approved_Coupon_Code</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Approved Coupon Code</shortDescription>
+        <value>This Coupon Code is Approved</value>
+    </labels>
+    <labels>
+        <fullName>Booking_Overlap_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error message displayed when booking dates overlap with existing bookings</shortDescription>
+        <value>Booking dates overlap with existing bookings for this car. Please select different dates.</value>
+    </labels>
+</CustomLabels>

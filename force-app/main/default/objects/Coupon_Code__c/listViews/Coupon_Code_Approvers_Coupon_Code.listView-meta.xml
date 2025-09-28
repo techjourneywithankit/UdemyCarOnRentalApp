@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Coupon_Code_Approvers_Coupon_Code</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Coupon Code Approvers</label>
+    <queue>Coupon_Code_Approvers</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

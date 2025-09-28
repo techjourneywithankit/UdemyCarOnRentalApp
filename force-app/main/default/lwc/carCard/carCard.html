@@ -1,0 +1,102 @@
+<template>
+  <template lwc:if={recordId}>
+    <template lwc:if={hasData}>
+      <lightning-card title={productName}>
+        <div class="slds-var-p-around_small">
+          <c-car-image-manager
+            record-id={recordId}
+            hide-upload-section="true"
+          ></c-car-image-manager>
+        </div>
+
+        <div class="slds-p-bottom_medium slds-text-align_center">
+          <lightning-button
+            label="Book Now"
+            variant="brand"
+            onclick={handleBookNow}
+          >
+          </lightning-button>
+        </div>
+        <div class="slds-text-align_center slds-p-bottom_medium">
+          <div class="slds-grid slds-gutters slds-grid_vertical-align-center">
+            <div class="slds-col slds-size_6-of-12">
+              <strong>Model : </strong>
+              <lightning-formatted-text
+                value={modelField}
+                class="slds-p-bottom_x-small"
+              ></lightning-formatted-text>
+            </div>
+            <div class="slds-col slds-size_6-of-12">
+              <strong>Car Family : </strong>
+              <lightning-formatted-text
+                value={carFamilyField}
+                class="slds-p-bottom_x-small"
+              ></lightning-formatted-text>
+            </div>
+          </div>
+
+          <div class="slds-p-top_medium slds-p-around_small">
+            <div
+              class="slds-grid slds-gutters slds-grid_vertical-align-center slds-wrap"
+            >
+              <div class="slds-col slds-size_6-of-12 slds-p-bottom_x-small">
+                <lightning-badge
+                  label={seatingCapacityBadge}
+                  icon-name="utility:user"
+                ></lightning-badge>
+              </div>
+              <div class="slds-col slds-size_6-of-12 slds-p-bottom_x-small">
+                <lightning-badge
+                  label={transmissionBadge}
+                  icon-name="utility:settings"
+                ></lightning-badge>
+              </div>
+              <div class="slds-col slds-size_6-of-12 slds-p-bottom_x-small">
+                <lightning-badge
+                  label={fuelTypeBadge}
+                  icon-name="utility:energy"
+                ></lightning-badge>
+              </div>
+              <div class="slds-col slds-size_6-of-12 slds-p-bottom_x-small">
+                <lightning-badge
+                  label={rentalRateBadge}
+                  icon-name="utility:currency"
+                ></lightning-badge>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slds-p-bottom_medium section-divider">
+          <div class="slds-p-around_small">
+            <strong>Car Description : </strong>
+            <lightning-formatted-text
+              value={descriptionField}
+            ></lightning-formatted-text>
+          </div>
+        </div>
+      </lightning-card>
+      <div class="slds-p-bottom_medium">
+        <c-car-rating-review record-id={recordId}></c-car-rating-review>
+      </div>
+    </template>
+    <template lwc:else>
+      <lightning-card title="Car Details">
+        <div class="slds-var-p-around_large slds-text-align_center">
+          <lightning-spinner
+            alternative-text="Loading car details..."
+            size="medium"
+          ></lightning-spinner>
+          <p class="slds-m-top_medium slds-text-color_weak">
+            Loading car information...
+          </p>
+        </div>
+      </lightning-card>
+    </template>
+  </template>
+  <template lwc:else>
+    <lightning-card title="Car Details">
+      <c-placeholder message="No car selected"></c-placeholder>
+    </lightning-card>
+  </template>
+</template>
