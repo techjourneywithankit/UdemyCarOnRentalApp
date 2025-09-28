@@ -82,7 +82,6 @@ The **Car On Rental App** is a full-featured Salesforce application designed to 
 ### Development Tools
 - **Salesforce CLI**: Command-line development tools
 - **VS Code**: Integrated development environment
-- **Jest**: Lightning Web Component testing
 - **ESLint**: Code quality and consistency
 - **Prettier**: Code formatting
 
@@ -126,6 +125,8 @@ The application follows a layered architecture pattern:
 - Salesforce CLI installed
 - Node.js (v14 or higher)
 - Git
+- VS Code with Salesforce Extension Pack
+- Salesforce Inspector Chrome Extension
 
 ### Installation
 
@@ -206,6 +207,10 @@ UdemyCarOnRentalApp/
 - **`carFilter`**: Advanced filtering interface
 - **`bookCarModal`**: Booking creation modal
 - **`carCard`**: Detailed car information display
+- **`carRatingReview`**: Review and rating system for cars
+- **`carImageManager`**: Car image upload and management interface
+- **`estimateBooking`**: Booking cost estimation component
+- **`estimateCarBooking`**: Car-specific booking estimation component
 
 #### Utility Components
 - **`starRating`**: Reusable star rating component
@@ -217,15 +222,48 @@ UdemyCarOnRentalApp/
 
 #### Business Logic
 - **`BookingTriggerHandler`**: Booking validation and processing
+- **`BookingTriggerHandlerService`**: Core booking business logic
 - **`CarAvailabilityRestApiService`**: REST API for car availability
 - **`CarReviewController`**: Review management
-- **`PaymentTransactionTriggerHandler`**: Payment processing
+- **`carImageController`**: Car image management
+- **`carTileListController`**: Car listing controller
 - **`ContactTriggerHandler`**: Contact management
+- **`ContactTriggerHandlerService`**: Contact processing service
+- **`PaymentTransactionTriggerHandler`**: Payment processing
+- **`PaymentTransactionTriggerHandlerService`**: Payment transaction service
+- **`ReviewTriggerHandler`**: Review system automation
+- **`ReviewTriggerHandlerService`**: Review processing service
 
 #### Utility Classes
 - **`Constants`**: Application-wide constants
 - **`TestDataFactory`**: Test data generation
 - **`LogCleanupBatch`**: Automated log cleanup
+- **`LogCleanupBatchSchedule`**: Scheduled log cleanup
+- **`QueuableTotalCarValue`**: Asynchronous car value calculation
+- **`queueableEmailValidation`**: Email validation service
+- **`EmailValidatoinHtppMock`**: Mock service for email validation
+
+#### Test Classes
+- **`BookingTriggerTest`**: Booking trigger test coverage
+- **`CarAvailabilityRestApiServiceTest`**: API service test coverage
+- **`ContactTriggerHandlerServiceTest`**: Contact handler test coverage
+- **`PaymentTransactionTriggerHandlerTest`**: Payment handler test coverage
+- **`ReviewTriggerTest`**: Review trigger test coverage
+- **`LogCleanupBatchTest`**: Batch job test coverage
+
+### Salesforce Flows
+
+#### Process Automation Flows
+- **`Approval_for_Coupon_Code`**: Coupon code approval workflow
+- **`Car_Return_Checklist`**: Car return process automation
+- **`Estimate_your_Booking`**: Booking cost estimation flow
+- **`Post_Booking_Automation_After_Save_activity`**: Post-booking activities
+- **`Post_Booking_Automation_Field_Update`**: Booking field updates
+- **`Post_Booking_Cancellation_Automation`**: Cancellation processing
+
+#### Data Management Flows
+- **`Prevent_Deletion_Of_Primary_Image`**: Image protection flow
+- **`Sync_Primary_Image`**: Image synchronization flow
 
 ### Custom Objects
 
@@ -235,6 +273,8 @@ UdemyCarOnRentalApp/
 - **`Payment_Transaction__c`**: Financial transactions
 - **`Review__c`**: Customer feedback
 - **`Coupon_Code__c`**: Discount management
+- **`Contact`**: Customer information and management
+- **`Case`**: Customer support and issue tracking
 
 #### Supporting Objects
 - **`Car_Image__c`**: Vehicle images
@@ -277,24 +317,9 @@ transmissionType: String (optional)
 }
 ```
 
-### Usage Example
-```javascript
-// JavaScript example
-const response = await fetch('/services/apexrest/v1/cars/available/?startDate=2024-01-01&endDate=2024-01-05&location=Downtown');
-const data = await response.json();
-console.log(data.cars);
-```
-
 ## 🧪 Testing
 
 ### Running Tests
-
-#### Lightning Web Component Tests
-```bash
-npm run test:unit
-npm run test:unit:watch
-npm run test:unit:coverage
-```
 
 #### Apex Tests
 ```bash
@@ -302,7 +327,6 @@ sfdx force:apex:test:run --testlevel RunLocalTests --resultformat human
 ```
 
 ### Test Coverage
-- **LWC Components**: Jest-based unit tests
 - **Apex Classes**: Comprehensive test classes
 - **Integration Tests**: End-to-end workflow testing
 - **API Tests**: REST service validation

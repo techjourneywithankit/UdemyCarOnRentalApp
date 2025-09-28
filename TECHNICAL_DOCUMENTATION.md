@@ -34,7 +34,7 @@ The **Car On Rental App** is a comprehensive Salesforce application designed to 
 - **Backend**: Apex Classes and Triggers
 - **Automation**: Salesforce Flows and Process Builder
 - **API**: REST Services
-- **Testing**: Jest Framework for LWC, Apex Test Classes
+- **Testing**: Apex Test Classes
 
 ---
 
@@ -1900,26 +1900,6 @@ transmissionType: String (optional)
 - Case creation
 - Review validation
 - Average computation
-
-### Lightning Web Component Tests
-
-#### Jest Test Framework
-**Configuration**: jest.config.js
-**Test Files**: Located in `__tests__` directories
-
-**Test Coverage**:
-- Component rendering
-- Event handling
-- Data binding
-- User interactions
-- Error scenarios
-
-**Key Test Components**:
-- carTileList.test.js
-- bookCarModal.test.js
-- carTile.test.js
-- carFilter.test.js
-- starRating.test.js
 
 ### Test Data Factory
 
