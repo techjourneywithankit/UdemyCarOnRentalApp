@@ -137,8 +137,16 @@ The application follows a layered architecture pattern:
 
 3. **Authenticate with Salesforce**
    ```bash
-   sfdx auth:web:login -d -a MyDevHub
+   sfdx auth:web:login -a MyOrg
    ```
+
+4. **Install Star Rating Package**
+   - Once logged into your org, replace the URL segment that comes after `lightning.force.com` with:
+   ```
+   /packaging/installPackage.apexp?p0=04t5G0000043xs2QAA
+   ```
+   - Complete URL will look like: `https://yourorg.lightning.force.com/packaging/installPackage.apexp?p0=04t5G0000043xs2QAA`
+   - Follow the installation wizard to install the Star Rating package
 
 5. **Deploy the application**
    ```bash
