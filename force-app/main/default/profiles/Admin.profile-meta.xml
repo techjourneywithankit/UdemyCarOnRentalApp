@@ -613,54 +613,6 @@
         <field>Metadata_Driven_Trigger__mdt.Enabled__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    <flowAccesses>
-        <enabled>true</enabled>
-        <flow>
-Approval_for_Coupon_Code
-    </flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>true</enabled>
-        <flow>
-Car_Return_Checklist
-    </flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>true</enabled>
-        <flow>
-Estimate_your_Booking
-    </flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>true</enabled>
-        <flow>
-Post_Booking_Automation_After_Save_activity
-    </flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>true</enabled>
-        <flow>
-Post_Booking_Automation_Field_Update
-    </flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>true</enabled>
-        <flow>
-Post_Booking_Cancellation_Automation
-    </flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>true</enabled>
-        <flow>
-Prevent_Deletion_Of_Primary_Image
-    </flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>true</enabled>
-        <flow>
-Sync_Primary_Image
-    </flow>
-    </flowAccesses>
     <layoutAssignments>
         <layout>Booking__c-Booking Layout</layout>
     </layoutAssignments>
