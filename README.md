@@ -164,6 +164,19 @@ The application follows a layered architecture pattern:
    sfdx force:org:open
    ```
 
+8. **Create comprehensive test data**
+   ```bash
+   # Or using the newer sf CLI
+   sf apex run --file scripts/createTestData.apex
+   ```
+   
+   This will create:
+   - 20 car records (real car data from CSV)
+   - 60 contact records (test customers)
+   - 60 booking records (3 bookings per car)
+   - 60 review records (1 review per booking)
+   - 5 case records (different support processes)
+
 ### Quick Start Guide
 
 1. **Navigate to the Car On Rental app** in your Salesforce org
@@ -236,7 +249,8 @@ UdemyCarOnRentalApp/
 
 #### Utility Classes
 - **`Constants`**: Application-wide constants
-- **`TestDataFactory`**: Test data generation
+- **`TestDataFactory`**: Basic test data generation
+- **`CarDataPreparationService`**: Comprehensive test data creation with hardcoded car data
 - **`LogCleanupBatch`**: Automated log cleanup
 - **`LogCleanupBatchSchedule`**: Scheduled log cleanup
 - **`QueuableTotalCarValue`**: Asynchronous car value calculation
@@ -332,10 +346,80 @@ sfdx force:apex:test:run --testlevel RunLocalTests --resultformat human
 - **API Tests**: REST service validation
 
 ### Test Data
-Use the `TestDataFactory` class to generate test data:
+
+#### Using TestDataFactory (Basic Test Data)
+Use the `TestDataFactory` class to generate basic test data:
 ```apex
 List<Contact> contacts = TestDataFactory.createContacts(5);
 List<Car__c> cars = TestDataFactory.createCars(10);
-List<Booking__c> bookings = TestDataFactory.createBookings(20);
+List<Booking__c> bookings = TestDataFactory.createBookings(20, contacts, cars);
+List<Review__c> reviews = TestDataFactory.createReviews(20, contacts, bookings, 4);
 ```
+
+#### Using CarDataPreparationService (Comprehensive Test Data)
+For comprehensive test data that mirrors real-world scenarios, use the `CarDataPreparationService` class:
+
+##### Creating All Car Records
+```apex
+// Create all 20 hardcoded car records from CSV data
+List<Car__c> cars = CarDataPreparationService.createAllCarRecords();
+```
+
+##### Creating Comprehensive Test Data
+```apex
+// Create complete test dataset: cars, contacts, bookings, reviews, and cases
+Map<String, List<SObject>> testData = CarDataPreparationService.createComprehensiveTestData();
+
+// Access specific record types
+List<Car__c> cars = (List<Car__c>) testData.get('cars');           // 20 cars
+List<Contact> contacts = (List<Contact>) testData.get('contacts'); // 60 contacts
+List<Booking__c> bookings = (List<Booking__c>) testData.get('bookings'); // 60 bookings (3 per car)
+List<Review__c> reviews = (List<Review__c>) testData.get('reviews');     // 60 reviews (1 per booking)
+List<Case> cases = (List<Case>) testData.get('cases');                   // 5 cases (different support processes)
+```
+
+##### Test Data Summary
+The comprehensive test data includes:
+- **20 Cars**: Real car data from CSV (Maruti Suzuki Swift, Hyundai Creta, Tata Nexon, etc.)
+- **60 Contacts**: Test customers with realistic email addresses and phone numbers
+- **60 Bookings**: 3 bookings per car with staggered dates and different durations
+- **60 Reviews**: 1 review per booking with ratings 3-5 and realistic comments
+- **5 Cases**: Different support processes:
+  - Booking Inquiry (Car Availability)
+  - Review Issue (Poor Car Condition)
+  - Maintenance Request (Engine Check)
+  - Booking Inquiry (Pricing Information)
+  - Review Issue (Customer Service Complaint)
+
+##### Executing Test Data Creation
+You can execute the test data creation in several ways:
+
+**1. Developer Console (Anonymous Apex)**
+```apex
+// Execute in Developer Console > Debug > Open Execute Anonymous Window
+Map<String, List<SObject>> testData = CarDataPreparationService.createComprehensiveTestData();
+System.debug('Created ' + testData.get('cars').size() + ' cars');
+System.debug('Created ' + testData.get('bookings').size() + ' bookings');
+System.debug('Created ' + testData.get('reviews').size() + ' reviews');
+System.debug('Created ' + testData.get('cases').size() + ' cases');
+```
+
+**2. Salesforce CLI (Execute Anonymous)**
+```bash
+# Create comprehensive test data
+sfdx force:apex:execute -f scripts/createTestData.apex
+
+# Or using the newer sf CLI
+sf apex run --file scripts/createTestData.apex
+```
+
+**3. Custom Button/Flow**
+Create a custom button or flow that calls the service method for easy access.
+
+##### Benefits of Comprehensive Test Data
+- **Realistic Scenarios**: Data mirrors actual business operations
+- **Complete Workflows**: Tests entire booking-to-review process
+- **Support Processes**: Includes various case types for testing
+- **Performance Testing**: Large dataset for load testing
+- **Integration Testing**: Tests relationships between all objects
 
