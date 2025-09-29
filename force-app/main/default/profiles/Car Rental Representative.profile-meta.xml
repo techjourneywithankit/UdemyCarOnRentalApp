@@ -1146,9 +1146,6 @@ Sync_Primary_Image;
         <layout>LogEvent__c-Log Event Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>LoginAnomalyEventStore-Login Anomaly Event Store Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Macro-Macro Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
