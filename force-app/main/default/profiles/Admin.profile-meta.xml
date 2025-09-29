@@ -594,11 +594,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Payment_Transaction__c.Booking__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>false</editable>
         <field>System_Thresholds__mdt.Description__c</field>
         <readable>false</readable>
