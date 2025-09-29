@@ -629,11 +629,6 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Metadata_Driven_Trigger__mdt.Enabled__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
         <field>Review__c.Booking__c</field>
         <readable>true</readable>
@@ -705,17 +700,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Metadata_Driven_Trigger__mdt.Object_Name__c</field>
+        <field>Metadata_Driven_Trigger__mdt.Class__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Metadata_Driven_Trigger__mdt.Trigger_Name__c</field>
+        <field>Metadata_Driven_Trigger__mdt.Object__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Metadata_Driven_Trigger__mdt.Trigger_Type__c</field>
+        <field>Metadata_Driven_Trigger__mdt.Enabled__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+       <fieldPermissions>
+        <editable>true</editable>
+        <field>Metadata_Driven_Trigger__mdt.Execution_Order__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <flowAccesses>
