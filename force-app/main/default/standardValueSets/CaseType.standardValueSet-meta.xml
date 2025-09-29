@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Electrical</fullName>
+        <default>false</default>
+        <label>Electrical</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Electronic</fullName>
+        <default>false</default>
+        <label>Electronic</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Structural</fullName>
+        <default>false</default>
+        <label>Structural</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Booking Problem</fullName>
+        <default>false</default>
+        <label>Booking Problem</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Questions</fullName>
+        <default>false</default>
+        <label>Questions</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Payments</fullName>
+        <default>false</default>
+        <label>Payments</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Accident</fullName>
+        <default>false</default>
+        <label>Accident</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Damage</fullName>
+        <default>false</default>
+        <label>Damage</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Breakdown</fullName>
+        <default>false</default>
+        <label>Breakdown</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Customer Feedback</fullName>
+        <default>false</default>
+        <label>Customer Feedback</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Negative Review</fullName>
+        <default>false</default>
+        <label>Negative Review</label>
+    </standardValue>
+</StandardValueSet>

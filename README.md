@@ -22,6 +22,7 @@ A comprehensive Salesforce application for managing car rental operations, built
 The **Car On Rental App** is a full-featured Salesforce application designed to streamline car rental business operations. It provides a complete solution for inventory management, booking processing, payment handling, customer reviews, and administrative workflows.
 
 ### Business Value
+
 - **Streamlined Operations**: Automated booking and payment processing
 - **Customer Experience**: Modern, responsive UI with real-time updates
 - **Business Intelligence**: Comprehensive reporting and analytics
@@ -31,6 +32,7 @@ The **Car On Rental App** is a full-featured Salesforce application designed to 
 ## ✨ Features
 
 ### 🚗 Car Inventory Management
+
 - Complete car catalog with images and specifications
 - Real-time availability tracking
 - Advanced filtering and search capabilities
@@ -38,6 +40,7 @@ The **Car On Rental App** is a full-featured Salesforce application designed to 
 - Performance analytics and revenue tracking
 
 ### 📅 Booking System
+
 - Advanced booking management with overlap validation
 - Dynamic pricing calculations
 - Coupon code integration with approval workflows
@@ -45,6 +48,7 @@ The **Car On Rental App** is a full-featured Salesforce application designed to 
 - Automated notifications and communications
 
 ### 💳 Payment Processing
+
 - Multi-stage payment handling
 - Security deposit management
 - Refund processing automation
@@ -52,6 +56,7 @@ The **Car On Rental App** is a full-featured Salesforce application designed to 
 - Financial transaction tracking
 
 ### ⭐ Customer Reviews
+
 - Star rating system (1-5 scale)
 - Review submission and validation
 - Automated case creation for negative feedback
@@ -59,6 +64,7 @@ The **Car On Rental App** is a full-featured Salesforce application designed to 
 - Customer communication triggers
 
 ### 🔧 Administrative Tools
+
 - Approval workflows for coupon codes
 - Case management for customer support
 - Comprehensive reporting and dashboards
@@ -68,24 +74,28 @@ The **Car On Rental App** is a full-featured Salesforce application designed to 
 ## 🛠 Technology Stack
 
 ### Frontend
+
 - **Lightning Web Components (LWC)**: Modern, performant UI components
 - **Lightning Design System**: Consistent Salesforce styling
 - **JavaScript ES6+**: Modern JavaScript features
 - **CSS3**: Responsive design and animations
 
 ### Backend
+
 - **Apex**: Server-side business logic
 - **Salesforce Platform**: Cloud-based infrastructure
 - **SOQL**: Database query language
 - **REST APIs**: External integration capabilities
 
 ### Development Tools
+
 - **Salesforce CLI**: Command-line development tools
 - **VS Code**: Integrated development environment
 - **ESLint**: Code quality and consistency
 - **Prettier**: Code formatting
 
 ### Automation
+
 - **Salesforce Flows**: Process automation
 - **Triggers**: Data validation and business logic
 - **Platform Events**: Real-time communication
@@ -112,6 +122,7 @@ The application follows a layered architecture pattern:
 ```
 
 ### Core Components
+
 1. **Data Model**: Custom objects representing business entities
 2. **Business Logic**: Apex classes handling complex operations
 3. **User Interface**: Lightning Web Components for modern UX
@@ -121,6 +132,7 @@ The application follows a layered architecture pattern:
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Salesforce Developer Edition org
 - Salesforce CLI installed
 - Node.js (v14 or higher)
@@ -131,45 +143,53 @@ The application follows a layered architecture pattern:
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
-   git clone https://github.com/yourusername/UdemyCarOnRentalApp.git
+   git clone https://github.com/techjourneywithankit/UdemyCarOnRentalApp.git
    cd UdemyCarOnRentalApp
    ```
 
-3. **Authenticate with Salesforce**
+2. **Authenticate with Salesforce**
+
    ```bash
    sfdx auth:web:login -a MyOrg
    ```
 
-4. **Install Star Rating Package**
-   - Once logged into your org, replace the URL segment that comes after `lightning.force.com` with:
+3. **Install Star Rating Package**
+   - Login to your Salesforce Org. Once logged into your org, replace the URL segment that comes after `lightning.force.com` with:
+
    ```
    /packaging/installPackage.apexp?p0=04t5G0000043xs2QAA
    ```
-   - Complete URL will look like: `https://yourorg.lightning.force.com/packaging/installPackage.apexp?p0=04t5G0000043xs2QAA`
-   - Follow the installation wizard to install the Star Rating package
 
-5. **Deploy the application**
+   - Complete URL will look like: `https://yourorg.lightning.force.com/packaging/installPackage.apexp?p0=04t5G0000043xs2QAA`
+   - Follow the installation wizard to install the Star Rating package for all users
+
+4. **Deploy the application**
+
    ```bash
-   sfdx force:source:push
+   sf project deploy start
    ```
 
-6. **Assign permissions**
+5. **Assign permissions**
+
    ```bash
    sfdx force:user:permset:assign -n Car_Rental_Manager
    ```
 
-7. **Open the org**
+6. **Open the org**
+
    ```bash
    sfdx force:org:open
    ```
 
-8. **Create comprehensive test data**
+7. **Create comprehensive test data**
+
    ```bash
    # Or using the newer sf CLI
    sf apex run --file scripts/createTestData.apex
    ```
-   
+
    This will create:
    - 20 car records (real car data from CSV)
    - 60 contact records (test customers)
@@ -215,6 +235,7 @@ UdemyCarOnRentalApp/
 ### Lightning Web Components
 
 #### Core UI Components
+
 - **`carTileList`**: Main car listing with filtering
 - **`carTile`**: Individual car display card
 - **`carFilter`**: Advanced filtering interface
@@ -226,6 +247,7 @@ UdemyCarOnRentalApp/
 - **`estimateCarBooking`**: Car-specific booking estimation component
 
 #### Utility Components
+
 - **`starRating`**: Reusable star rating component
 - **`errorPanel`**: Error handling and display
 - **`placeholder`**: Loading and empty states
@@ -234,6 +256,7 @@ UdemyCarOnRentalApp/
 ### Apex Classes
 
 #### Business Logic
+
 - **`BookingTriggerHandler`**: Booking validation and processing
 - **`BookingTriggerHandlerService`**: Core booking business logic
 - **`CarAvailabilityRestApiService`**: REST API for car availability
@@ -248,6 +271,7 @@ UdemyCarOnRentalApp/
 - **`ReviewTriggerHandlerService`**: Review processing service
 
 #### Utility Classes
+
 - **`Constants`**: Application-wide constants
 - **`TestDataFactory`**: Basic test data generation
 - **`CarDataPreparationService`**: Comprehensive test data creation with hardcoded car data
@@ -258,6 +282,7 @@ UdemyCarOnRentalApp/
 - **`EmailValidatoinHtppMock`**: Mock service for email validation
 
 #### Test Classes
+
 - **`BookingTriggerTest`**: Booking trigger test coverage
 - **`CarAvailabilityRestApiServiceTest`**: API service test coverage
 - **`ContactTriggerHandlerServiceTest`**: Contact handler test coverage
@@ -268,6 +293,7 @@ UdemyCarOnRentalApp/
 ### Salesforce Flows
 
 #### Process Automation Flows
+
 - **`Approval_for_Coupon_Code`**: Coupon code approval workflow
 - **`Car_Return_Checklist`**: Car return process automation
 - **`Estimate_your_Booking`**: Booking cost estimation flow
@@ -276,12 +302,14 @@ UdemyCarOnRentalApp/
 - **`Post_Booking_Cancellation_Automation`**: Cancellation processing
 
 #### Data Management Flows
+
 - **`Prevent_Deletion_Of_Primary_Image`**: Image protection flow
 - **`Sync_Primary_Image`**: Image synchronization flow
 
 ### Custom Objects
 
 #### Core Objects
+
 - **`Booking__c`**: Central booking management
 - **`Car__c`**: Vehicle inventory
 - **`Payment_Transaction__c`**: Financial transactions
@@ -291,6 +319,7 @@ UdemyCarOnRentalApp/
 - **`Case`**: Customer support and issue tracking
 
 #### Supporting Objects
+
 - **`Car_Image__c`**: Vehicle images
 - **`Log__e`**: Platform events for logging
 - **`LogEvent__c`**: Persistent log storage
@@ -304,6 +333,7 @@ UdemyCarOnRentalApp/
 **Authentication**: Salesforce session-based
 
 #### Request Parameters
+
 ```
 startDate: YYYY-MM-DD (required)
 endDate: YYYY-MM-DD (required)
@@ -313,6 +343,7 @@ transmissionType: String (optional)
 ```
 
 #### Response Format
+
 ```json
 {
   "success": true,
@@ -323,7 +354,7 @@ transmissionType: String (optional)
       "Name": "Car Name",
       "Make__c": "Toyota",
       "Model__c": "Camry",
-      "Rental_Rate_Per_Day__c": 50.00,
+      "Rental_Rate_Per_Day__c": 50.0,
       "Primary_Image_Url__c": "image_url",
       "Availability_Status__c": "Available"
     }
@@ -336,11 +367,13 @@ transmissionType: String (optional)
 ### Running Tests
 
 #### Apex Tests
+
 ```bash
 sfdx force:apex:test:run --testlevel RunLocalTests --resultformat human
 ```
 
 ### Test Coverage
+
 - **Apex Classes**: Comprehensive test classes
 - **Integration Tests**: End-to-end workflow testing
 - **API Tests**: REST service validation
@@ -348,7 +381,9 @@ sfdx force:apex:test:run --testlevel RunLocalTests --resultformat human
 ### Test Data
 
 #### Using TestDataFactory (Basic Test Data)
+
 Use the `TestDataFactory` class to generate basic test data:
+
 ```apex
 List<Contact> contacts = TestDataFactory.createContacts(5);
 List<Car__c> cars = TestDataFactory.createCars(10);
@@ -357,15 +392,18 @@ List<Review__c> reviews = TestDataFactory.createReviews(20, contacts, bookings, 
 ```
 
 #### Using CarDataPreparationService (Comprehensive Test Data)
+
 For comprehensive test data that mirrors real-world scenarios, use the `CarDataPreparationService` class:
 
 ##### Creating All Car Records
+
 ```apex
 // Create all 20 hardcoded car records from CSV data
 List<Car__c> cars = CarDataPreparationService.createAllCarRecords();
 ```
 
 ##### Creating Comprehensive Test Data
+
 ```apex
 // Create complete test dataset: cars, contacts, bookings, reviews, and cases
 Map<String, List<SObject>> testData = CarDataPreparationService.createComprehensiveTestData();
@@ -379,7 +417,9 @@ List<Case> cases = (List<Case>) testData.get('cases');                   // 5 ca
 ```
 
 ##### Test Data Summary
+
 The comprehensive test data includes:
+
 - **20 Cars**: Real car data from CSV (Maruti Suzuki Swift, Hyundai Creta, Tata Nexon, etc.)
 - **60 Contacts**: Test customers with realistic email addresses and phone numbers
 - **60 Bookings**: 3 bookings per car with staggered dates and different durations
@@ -392,9 +432,11 @@ The comprehensive test data includes:
   - Review Issue (Customer Service Complaint)
 
 ##### Executing Test Data Creation
+
 You can execute the test data creation in several ways:
 
 **1. Developer Console (Anonymous Apex)**
+
 ```apex
 // Execute in Developer Console > Debug > Open Execute Anonymous Window
 Map<String, List<SObject>> testData = CarDataPreparationService.createComprehensiveTestData();
@@ -405,6 +447,7 @@ System.debug('Created ' + testData.get('cases').size() + ' cases');
 ```
 
 **2. Salesforce CLI (Execute Anonymous)**
+
 ```bash
 # Create comprehensive test data
 sfdx force:apex:execute -f scripts/createTestData.apex
@@ -417,9 +460,9 @@ sf apex run --file scripts/createTestData.apex
 Create a custom button or flow that calls the service method for easy access.
 
 ##### Benefits of Comprehensive Test Data
+
 - **Realistic Scenarios**: Data mirrors actual business operations
 - **Complete Workflows**: Tests entire booking-to-review process
 - **Support Processes**: Includes various case types for testing
 - **Performance Testing**: Large dataset for load testing
 - **Integration Testing**: Tests relationships between all objects
-

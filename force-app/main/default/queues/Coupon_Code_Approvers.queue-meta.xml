@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <Queue xmlns="http://soap.sforce.com/2006/04/metadata">
     <doesSendEmailToMembers>false</doesSendEmailToMembers>
     <name>Coupon Code Approvers</name>
@@ -7,7 +7,7 @@
             <role>CEO</role>
         </roles>
         <users>
-            <user>khiwansarasfdc103@agentforce.com</user>
+            <user>techjourneywithankit592@agentforce.com</user>
         </users>
     </queueMembers>
     <queueSobject>
