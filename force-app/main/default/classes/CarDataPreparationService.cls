@@ -706,6 +706,72 @@ public with sharing class CarDataPreparationService {
     }
     
     /**
+     * @description Clears all existing test data before creating new data
+     * Deletes records in reverse dependency order to avoid foreign key constraints
+     * @return Map with counts of deleted records
+     */
+    public static Map<String, Integer> clearExistingTestData() {
+        Map<String, Integer> deletionCounts = new Map<String, Integer>();
+        
+        try {
+            System.debug('🧹 Starting to clear existing test data...');
+            
+            // 1. Delete Cases first (no dependencies)
+            List<Case> existingCases = [SELECT Id FROM Case];
+            if (!existingCases.isEmpty()) {
+                delete existingCases;
+                deletionCounts.put('cases', existingCases.size());
+                System.debug('✅ Deleted ' + existingCases.size() + ' existing case records');
+            }
+            
+            // 2. Delete Reviews (depends on Bookings)
+            List<Review__c> existingReviews = [SELECT Id FROM Review__c];
+            if (!existingReviews.isEmpty()) {
+                delete existingReviews;
+                deletionCounts.put('reviews', existingReviews.size());
+                System.debug('✅ Deleted ' + existingReviews.size() + ' existing review records');
+            }
+            
+            // 3. Delete Bookings (depends on Cars and Contacts)
+            List<Booking__c> existingBookings = [SELECT Id FROM Booking__c];
+            if (!existingBookings.isEmpty()) {
+                delete existingBookings;
+                deletionCounts.put('bookings', existingBookings.size());
+                System.debug('✅ Deleted ' + existingBookings.size() + ' existing booking records');
+            }
+            
+            // 4. Delete Contacts (depends on Accounts, but we'll keep accounts)
+            List<Contact> existingContacts = [SELECT Id FROM Contact WHERE AccountId != null];
+            if (!existingContacts.isEmpty()) {
+                delete existingContacts;
+                deletionCounts.put('contacts', existingContacts.size());
+                System.debug('✅ Deleted ' + existingContacts.size() + ' existing contact records');
+            }
+            
+            // 5. Delete Cars last (other objects depend on cars)
+            List<Car__c> existingCars = [SELECT Id FROM Car__c];
+            if (!existingCars.isEmpty()) {
+                delete existingCars;
+                deletionCounts.put('cars', existingCars.size());
+                System.debug('✅ Deleted ' + existingCars.size() + ' existing car records');
+            }
+            
+            System.debug('🎉 Successfully cleared all existing test data!');
+            System.debug('📊 Deletion Summary:');
+            for (String objectType : deletionCounts.keySet()) {
+                System.debug('   - ' + objectType + ': ' + deletionCounts.get(objectType) + ' records deleted');
+            }
+            
+        } catch (Exception e) {
+            System.debug('❌ Error clearing existing test data: ' + e.getMessage());
+            System.debug('Stack trace: ' + e.getStackTraceString());
+            throw new CarDataPreparationException('Failed to clear existing test data: ' + e.getMessage());
+        }
+        
+        return deletionCounts;
+    }
+    
+    /**
      * @description Custom exception class for Car Data Preparation errors
      */
     public class CarDataPreparationException extends Exception {}

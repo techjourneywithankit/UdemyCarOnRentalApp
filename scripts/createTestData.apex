@@ -4,7 +4,12 @@
 System.debug('Starting comprehensive test data creation...');
 
 try {
-    // Create comprehensive test data
+    // Step 1: Clear existing test data first
+    System.debug('🧹 Clearing existing test data...');
+    Map<String, Integer> deletionCounts = CarDataPreparationService.clearExistingTestData();
+    
+    // Step 2: Create comprehensive test data
+    System.debug('📝 Creating new test data...');
     Map<String, List<SObject>> testData = CarDataPreparationService.createComprehensiveTestData();
     
     // Log results
