@@ -493,7 +493,7 @@
         <name>WorkflowRule</name>
     </types>
     <types>
-        <members>*</members>    qw2e3qre4sw
+        <members>*</members>    
         <name>WorkflowSend</name>
     </types>
     <types>
@@ -503,6 +503,11 @@
     <types>
         <members>*</members>
         <name>Settings</name>
+    </types>
+    <types>
+        <members>CaseReason</members>
+         <members>CaseTyoe</members>
+        <name>StandardValueSet</name>
     </types>
     <version>63.0</version>
 </Package>

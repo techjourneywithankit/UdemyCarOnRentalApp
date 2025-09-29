@@ -152,7 +152,7 @@ The application follows a layered architecture pattern:
 2. **Authenticate with Salesforce**
 
    ```bash
-   sfdx auth:web:login -a MyOrg
+   sf org login web -s -a mydevorg
    ```
 
 3. **Install Star Rating Package**
