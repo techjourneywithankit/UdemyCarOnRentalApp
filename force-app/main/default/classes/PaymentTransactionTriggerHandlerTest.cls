@@ -2,7 +2,7 @@
 public with sharing class PaymentTransactionTriggerHandlerTest {
 
     //create test data
-    @testSetup 
+    @testSetup
     static void makeData(){
         List<Contact> conList =  TestDataFactory.createContacts(2);
         List<Car__c> carList = TestDataFactory.createCars(2);
