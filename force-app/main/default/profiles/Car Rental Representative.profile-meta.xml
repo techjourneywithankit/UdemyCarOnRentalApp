@@ -825,54 +825,6 @@
         <field>System_Thresholds__mdt.Value__c</field>
         <readable>false</readable>
     </fieldPermissions>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>
-Approval_for_Coupon_Code;
-    </flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>
-Car_Return_Checklist;
-    </flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>
-Estimate_your_Booking;
-    </flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>
-Post_Booking_Automation_After_Save_activity;
-    </flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>
-Post_Booking_Automation_Field_Update;
-    </flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>
-Post_Booking_Cancellation_Automation;
-    </flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>
-Prevent_Deletion_Of_Primary_Image;
-    </flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>
-Sync_Primary_Image;
-    </flow>
-    </flowAccesses>
     <layoutAssignments>
         <layout>Account-Account Layout</layout>
     </layoutAssignments>

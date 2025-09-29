@@ -700,7 +700,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Disabled_For__mdt.Trigger_Name__c</field>
+        <field>Disabled_For__mdt.Metadata_Driven_Trigger__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
