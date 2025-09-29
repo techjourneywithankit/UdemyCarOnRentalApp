@@ -186,7 +186,6 @@ The application follows a layered architecture pattern:
 7. **Create comprehensive test data**
 
    ```bash
-   # Or using the newer sf CLI
    sf apex run --file scripts/createTestData.apex
    ```
 
