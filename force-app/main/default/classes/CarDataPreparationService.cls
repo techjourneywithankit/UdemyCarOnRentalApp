@@ -49,7 +49,7 @@ public with sharing class CarDataPreparationService {
             Next_Service_Date__c = Date.newInstance(2025, 3, 10),
             Number_of_Seats__c = 5,
             PickupLocation__c = 'Bengaluru',
-            Primary_Image_Url__c = 'https://car-on-rental.s3.us-east-2.amazonaws.com/Maruti+Suzuki+Swift.jpg',
+            Primary_Image_Url__c = 'https://car-on-rental-01.s3.us-east-2.amazonaws.com/Images/Maruti+Suzuki+Swift.png',
             Rental_Rate_Per_Day__c = 1500,
             Transmission_Type__c = 'Manual',
             Year__c = 2022
@@ -71,7 +71,7 @@ public with sharing class CarDataPreparationService {
             Next_Service_Date__c = Date.newInstance(2025, 6, 1),
             Number_of_Seats__c = 5,
             PickupLocation__c = 'Delhi',
-            Primary_Image_Url__c = 'https://car-on-rental.s3.us-east-2.amazonaws.com/Hyundai+CREATA.jpg',
+            Primary_Image_Url__c = 'https://car-on-rental-01.s3.us-east-2.amazonaws.com/Images/++Hyundai+Creta.jpeg',
             Rental_Rate_Per_Day__c = 1000,
             Transmission_Type__c = 'Automatic',
             Year__c = 2023
@@ -93,7 +93,7 @@ public with sharing class CarDataPreparationService {
             Next_Service_Date__c = Date.newInstance(2025, 4, 20),
             Number_of_Seats__c = 5,
             PickupLocation__c = 'Jaipur',
-            Primary_Image_Url__c = 'https://car-on-rental.s3.us-east-2.amazonaws.com/TATA+NEXON.jpg',
+            Primary_Image_Url__c = 'https://car-on-rental-01.s3.us-east-2.amazonaws.com/Images/Tata+Nexon.jpeg',
             Rental_Rate_Per_Day__c = 1800,
             Transmission_Type__c = 'Manual',
             Year__c = 2022
@@ -115,7 +115,7 @@ public with sharing class CarDataPreparationService {
             Next_Service_Date__c = Date.newInstance(2025, 7, 15),
             Number_of_Seats__c = 4,
             PickupLocation__c = 'Pune',
-            Primary_Image_Url__c = 'https://car-on-rental.s3.us-east-2.amazonaws.com/Mahindra+THAR.jpg',
+            Primary_Image_Url__c = 'https://car-on-rental-01.s3.us-east-2.amazonaws.com/Images/Mahindra+Thar.jpeg',
             Rental_Rate_Per_Day__c = 3000,
             Transmission_Type__c = 'Automatic',
             Year__c = 2024
@@ -137,7 +137,7 @@ public with sharing class CarDataPreparationService {
             Next_Service_Date__c = Date.newInstance(2025, 5, 5),
             Number_of_Seats__c = 5,
             PickupLocation__c = 'Hyderabad',
-            Primary_Image_Url__c = 'https://car-on-rental.s3.us-east-2.amazonaws.com/Maruti+Suzuki+Baleno.jpg',
+            Primary_Image_Url__c = 'https://car-on-rental-01.s3.us-east-2.amazonaws.com/Images/Baleno.jpeg',
             Rental_Rate_Per_Day__c = 1600,
             Transmission_Type__c = 'Automatic',
             Year__c = 2023
@@ -159,7 +159,7 @@ public with sharing class CarDataPreparationService {
             Next_Service_Date__c = Date.newInstance(2025, 2, 18),
             Number_of_Seats__c = 5,
             PickupLocation__c = 'Mumbai',
-            Primary_Image_Url__c = 'https://car-on-rental.s3.us-east-2.amazonaws.com/Hyundai+verna.jpg',
+            Primary_Image_Url__c = 'https://car-on-rental-01.s3.us-east-2.amazonaws.com/Images/Hyundai+Verna.jpeg',
             Rental_Rate_Per_Day__c = 2000,
             Transmission_Type__c = 'Automatic',
             Year__c = 2022
@@ -181,7 +181,7 @@ public with sharing class CarDataPreparationService {
             Next_Service_Date__c = Date.newInstance(2025, 8, 1),
             Number_of_Seats__c = 5,
             PickupLocation__c = 'Jaipur',
-            Primary_Image_Url__c = 'https://car-on-rental.s3.us-east-2.amazonaws.com/Altroz.jpg',
+            Primary_Image_Url__c = 'https://car-on-rental-01.s3.us-east-2.amazonaws.com/Images/Tata+Altroz.png',
             Rental_Rate_Per_Day__c = 1400,
             Transmission_Type__c = 'Manual',
             Year__c = 2023
@@ -203,7 +203,7 @@ public with sharing class CarDataPreparationService {
             Next_Service_Date__c = Date.newInstance(2025, 5, 12),
             Number_of_Seats__c = 7,
             PickupLocation__c = 'Pune',
-            Primary_Image_Url__c = 'https://car-on-rental.s3.us-east-2.amazonaws.com/xuv700.jpg.jpg',
+            Primary_Image_Url__c = 'https://car-on-rental-01.s3.us-east-2.amazonaws.com/Images/Mahindra+Thar.jpeg',
             Rental_Rate_Per_Day__c = 2800,
             Transmission_Type__c = 'Automatic',
             Year__c = 2023
@@ -225,7 +225,7 @@ public with sharing class CarDataPreparationService {
             Next_Service_Date__c = Date.newInstance(2025, 1, 25),
             Number_of_Seats__c = 7,
             PickupLocation__c = 'Bengaluru',
-            Primary_Image_Url__c = 'https://car-on-rental.s3.us-east-2.amazonaws.com/ertiga.jpg',
+            Primary_Image_Url__c = 'https://car-on-rental-01.s3.us-east-2.amazonaws.com/Images/Maruti+Suzuki+Ertiga.jpeg',
             Rental_Rate_Per_Day__c = 2200,
             Transmission_Type__c = 'Manual',
             Year__c = 2022
@@ -247,7 +247,7 @@ public with sharing class CarDataPreparationService {
             Next_Service_Date__c = Date.newInstance(2025, 7, 22),
             Number_of_Seats__c = 5,
             PickupLocation__c = 'Delhi',
-            Primary_Image_Url__c = 'https://car-on-rental.s3.us-east-2.amazonaws.com/i20.jpg',
+            Primary_Image_Url__c = 'https://car-on-rental-01.s3.us-east-2.amazonaws.com/Images/Hyundai+i20.jpeg',
             Rental_Rate_Per_Day__c = 1550,
             Transmission_Type__c = 'Manual',
             Year__c = 2023
@@ -269,7 +269,7 @@ public with sharing class CarDataPreparationService {
             Next_Service_Date__c = Date.newInstance(2025, 9, 1),
             Number_of_Seats__c = 5,
             PickupLocation__c = 'Pune',
-            Primary_Image_Url__c = 'https://car-on-rental.s3.us-east-2.amazonaws.com/tataPunch.jpg',
+            Primary_Image_Url__c = 'https://car-on-rental-01.s3.us-east-2.amazonaws.com/Images/Tata+Punch.png',
             Rental_Rate_Per_Day__c = 1300,
             Transmission_Type__c = 'Manual',
             Year__c = 2024
@@ -291,7 +291,7 @@ public with sharing class CarDataPreparationService {
             Next_Service_Date__c = Date.newInstance(2025, 3, 1),
             Number_of_Seats__c = 7,
             PickupLocation__c = 'Mumbai',
-            Primary_Image_Url__c = 'https://car-on-rental.s3.us-east-2.amazonaws.com/Bolero.png',
+            Primary_Image_Url__c = 'https://car-on-rental-01.s3.us-east-2.amazonaws.com/Images/Mahindra+Bolero.png',
             Rental_Rate_Per_Day__c = 1700,
             Transmission_Type__c = 'Manual',
             Year__c = 2022
@@ -313,7 +313,7 @@ public with sharing class CarDataPreparationService {
             Next_Service_Date__c = Date.newInstance(2025, 6, 15),
             Number_of_Seats__c = 5,
             PickupLocation__c = 'Hyderabad',
-            Primary_Image_Url__c = 'https://car-on-rental.s3.us-east-2.amazonaws.com/dzire.jpg',
+            Primary_Image_Url__c = 'https://car-on-rental-01.s3.us-east-2.amazonaws.com/Images/Maruti+Suzuki+Dzire.jpg',
             Rental_Rate_Per_Day__c = 1750,
             Transmission_Type__c = 'Automatic',
             Year__c = 2023
@@ -335,7 +335,7 @@ public with sharing class CarDataPreparationService {
             Next_Service_Date__c = Date.newInstance(2025, 8, 10),
             Number_of_Seats__c = 5,
             PickupLocation__c = 'Mumbai',
-            Primary_Image_Url__c = 'https://car-on-rental.s3.us-east-2.amazonaws.com/venue.jpeg',
+            Primary_Image_Url__c = 'https://car-on-rental-01.s3.us-east-2.amazonaws.com/Images/Hyundai+Venue.jpeg',
             Rental_Rate_Per_Day__c = 1900,
             Transmission_Type__c = 'Automatic',
             Year__c = 2024
@@ -357,7 +357,7 @@ public with sharing class CarDataPreparationService {
             Next_Service_Date__c = Date.newInstance(2025, 5, 25),
             Number_of_Seats__c = 5,
             PickupLocation__c = 'Jaipur',
-            Primary_Image_Url__c = 'https://car-on-rental.s3.us-east-2.amazonaws.com/Harrier.jpg',
+            Primary_Image_Url__c = 'https://car-on-rental-01.s3.us-east-2.amazonaws.com/Images/Tata+Harrier.jpeg',
             Rental_Rate_Per_Day__c = 2600,
             Transmission_Type__c = 'Manual',
             Year__c = 2023
@@ -379,7 +379,7 @@ public with sharing class CarDataPreparationService {
             Next_Service_Date__c = Date.newInstance(2025, 7, 1),
             Number_of_Seats__c = 7,
             PickupLocation__c = 'Pune',
-            Primary_Image_Url__c = 'https://car-on-rental.s3.us-east-2.amazonaws.com/scorpio.jpg',
+            Primary_Image_Url__c = 'https://car-on-rental-01.s3.us-east-2.amazonaws.com/Images/Mahindra+Scorpio-N.jpg',
             Rental_Rate_Per_Day__c = 2900,
             Transmission_Type__c = 'Automatic',
             Year__c = 2024
@@ -401,7 +401,7 @@ public with sharing class CarDataPreparationService {
             Next_Service_Date__c = Date.newInstance(2025, 4, 5),
             Number_of_Seats__c = 5,
             PickupLocation__c = 'Bengaluru',
-            Primary_Image_Url__c = 'https://car-on-rental.s3.us-east-2.amazonaws.com/Wagonr.jpg',
+            Primary_Image_Url__c = 'https://car-on-rental-01.s3.us-east-2.amazonaws.com/Images/++Maruti+Suzuki+WagonR.jpeg',
             Rental_Rate_Per_Day__c = 1350,
             Transmission_Type__c = 'Manual',
             Year__c = 2022
@@ -423,7 +423,7 @@ public with sharing class CarDataPreparationService {
             Next_Service_Date__c = Date.newInstance(2025, 6, 20),
             Number_of_Seats__c = 5,
             PickupLocation__c = 'Delhi',
-            Primary_Image_Url__c = 'https://car-on-rental.s3.us-east-2.amazonaws.com/grandi10.jpg',
+            Primary_Image_Url__c = 'https://car-on-rental-01.s3.us-east-2.amazonaws.com/Images/Hyundai+Grand+i10+Nios.png',
             Rental_Rate_Per_Day__c = 1450,
             Transmission_Type__c = 'Manual',
             Year__c = 2023
@@ -445,7 +445,7 @@ public with sharing class CarDataPreparationService {
             Next_Service_Date__c = Date.newInstance(2025, 9, 10),
             Number_of_Seats__c = 7,
             PickupLocation__c = 'Pune',
-            Primary_Image_Url__c = 'https://car-on-rental.s3.us-east-2.amazonaws.com/Tata-Safari.jpg',
+            Primary_Image_Url__c = 'https://car-on-rental-01.s3.us-east-2.amazonaws.com/Images/Tata+Safari.jpeg',
             Rental_Rate_Per_Day__c = 2700,
             Transmission_Type__c = 'Automatic',
             Year__c = 2024
@@ -467,7 +467,7 @@ public with sharing class CarDataPreparationService {
             Next_Service_Date__c = Date.newInstance(2025, 7, 5),
             Number_of_Seats__c = 5,
             PickupLocation__c = 'Hyderabad',
-            Primary_Image_Url__c = 'https://car-on-rental.s3.us-east-2.amazonaws.com/BS6-Maruti-Ciaz-S.jpg',
+            Primary_Image_Url__c = 'https://car-on-rental-01.s3.us-east-2.amazonaws.com/Images/Maruti+Suzuki+Ciaz.png',
             Rental_Rate_Per_Day__c = 1850,
             Transmission_Type__c = 'Automatic',
             Year__c = 2023
