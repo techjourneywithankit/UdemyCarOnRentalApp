@@ -155,8 +155,14 @@ The application follows a layered architecture pattern:
    sf org login web -s -a mydevorg
    ```
 
-3. **Install Star Rating Package**
-   - Login to your Salesforce Org. Once logged into your org, replace the URL segment that comes after `lightning.force.com` with:
+3. **Open the org**
+
+   ```bash
+   sfdx force:org:open
+   ```
+
+4. **Install Star Rating Package**
+   - Once logged into your org, replace the URL segment that comes after `lightning.force.com` with:
 
    ```
    /packaging/installPackage.apexp?p0=04t5G0000043xs2QAA
@@ -165,23 +171,17 @@ The application follows a layered architecture pattern:
    - Complete URL will look like: `https://yourorg.lightning.force.com/packaging/installPackage.apexp?p0=04t5G0000043xs2QAA`
    - Follow the installation wizard to install the Star Rating package for all users
 
-4. **Deploy the application**
+5. **Deploy the application**
 
    ```bash
    sf project deploy start
    ```
 
-5. **Assign permissions**
+6. **Deactivate the Post Booking Automation flow** (to prevent interference during test data creation)
 
-   ```bash
-   sfdx force:user:permset:assign -n Car_Rental_Manager
-   ```
+   Navigate to: **Setup → Flows → Post Booking Automation - After Save activity → Deactivate**
+   
 
-6. **Open the org**
-
-   ```bash
-   sfdx force:org:open
-   ```
 
 7. **Create comprehensive test data**
 
@@ -195,6 +195,10 @@ The application follows a layered architecture pattern:
    - 60 booking records (3 bookings per car)
    - 60 review records (1 review per booking)
    - 5 case records (different support processes)
+
+8. **Activate the Post Booking Automation flow** (to enable booking automation)
+
+   Navigate to: **Setup → Flows → Post Booking Automation - After Save activity → Activate**
 
 ### Quick Start Guide
 
