@@ -1,14 +1,14 @@
-import { LightningElement, wire } from "lwc";
+import { LightningElement,wire } from 'lwc';
 // Import message service features required for subscribing and the message channel
 import {
-  publish,
-  subscribe,
-  unsubscribe,
-  APPLICATION_SCOPE,
-  MessageContext
-} from "lightning/messageService";
-import recordSelected from "@salesforce/messageChannel/carFilter__c";
-import getCars from "@salesforce/apex/carTileListController.getCars";
+    publish,
+    subscribe,
+    unsubscribe,
+    APPLICATION_SCOPE,
+    MessageContext,
+} from 'lightning/messageService';
+import recordSelected from '@salesforce/messageChannel/carFilter__c';
+import getCars from "@salesforce/apex/carTileListController.getCars"
 import carSelection from "@salesforce/messageChannel/carSelection__c";
 import BookCarModal from "c/bookCarModal";
 import EstimateCarBooking from "c/estimateCarBooking";
@@ -16,62 +16,60 @@ import { ShowToastEvent } from "lightning/platformShowToastEvent";
 import { NavigationMixin } from "lightning/navigation";
 import BOOKING_OBJECT from "@salesforce/schema/Booking__c";
 
-export default class CarTileList extends NavigationMixin(LightningElement) {
-  subscription = null;
-  filters;
-  showInitialMessage = true;
+export default class CarTileList extends LightningElement {
+    subscription = null;
+    filters;
+    showInitialMessage = true;
 
-  @wire(MessageContext)
-  messageContext;
+    @wire(MessageContext)
+    messageContext;
 
-  @wire(getCars, {
-    filters: "$filters"
-  })
-  cars;
+    @wire(getCars,{
+        filters: '$filters'
+    }) cars;
 
-  // Standard lifecycle hooks used to subscribe and unsubsubscribe to the message channel
-  connectedCallback() {
-    this.subscribeToMessageChannel();
-  }
-
-  // Encapsulate logic for Lightning message service subscribe and unsubsubscribe
-  subscribeToMessageChannel() {
-    if (!this.subscription) {
-      this.subscription = subscribe(
-        this.messageContext,
-        recordSelected,
-        (message) => this.handleMessage(message),
-        { scope: APPLICATION_SCOPE }
-      );
+    // Standard lifecycle hooks used to subscribe and unsubsubscribe to the message channel
+    connectedCallback() {
+        this.subscribeToMessageChannel();
     }
-  }
 
-  handleMessage(message) {
-    //receive the filters
-    console.log("message", message);
-    this.filters = { ...message.selCarFilter.filters };
-    this.showInitialMessage = false;
-  }
+    disconnectedCallback() {
+        this.unsubscribeToMessageChannel();
+    }
 
-  disconnectedCallback() {
-    this.unsubscribeToMessageChannel();
-  }
+    // Encapsulate logic for Lightning message service subscribe and unsubsubscribe
+    subscribeToMessageChannel() {
+        if (!this.subscription) {
+            this.subscription = subscribe(
+                this.messageContext,
+                recordSelected,
+                (message) => this.handleMessage(message),
+                { scope: APPLICATION_SCOPE }
+            );
+        }
+    }
 
-  unsubscribeToMessageChannel() {
-    unsubscribe(this.subscription);
-    this.subscription = null;
-  }
+    unsubscribeToMessageChannel() {
+        unsubscribe(this.subscription);
+        this.subscription = null;
+    }
 
-  get isRecordsFound() {
-    console.log("this.cars.data ", this.cars.data);
-    return this.cars.data && this.cars.data.length > 0;
-  }
+    handleMessage(message){
+        console.log('message ', message);
+        this.filters = {...message.selCarFilter.filters}
+        this.showInitialMessage = false;
+    }
 
-  handleCarSelected(event) {
+    get isRecordsFound(){
+        console.log('this.cars.data ', this.cars.data);
+        return this.cars.data && this.cars.data.length > 0;
+    }
+
+    handleCarSelected(event) {
     console.log("handleCarSelected");
     const payload = { carId: event.detail };
     publish(this.messageContext, carSelection, payload);
-  }
+   }
 
   handleEstimateBooking(event) {
     console.log("handleEstimateBooking");
@@ -116,4 +114,5 @@ export default class CarTileList extends NavigationMixin(LightningElement) {
     });
     this.dispatchEvent(event);
   }
+    
 }
