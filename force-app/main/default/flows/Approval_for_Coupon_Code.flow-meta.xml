@@ -59,7 +59,7 @@
     <formulas>
         <name>ConvertTextToPercentage</name>
         <dataType>Number</dataType>
-        <expression>VALUE({!Get_Maximum_Auto_Approved_Discount.Value__c})/100</expression>
+        <expression>VALUE({!Get_Maximum_Auto_Approved_Discount.Value__c})</expression>
         <scale>2</scale>
     </formulas>
     <interviewLabel>Approval for Coupon Code {!$Flow.CurrentDateTime}</interviewLabel>
